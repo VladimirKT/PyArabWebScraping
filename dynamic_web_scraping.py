@@ -18,8 +18,8 @@ import time
 chrome_options = Options()
 # chrome_options.add_argument("--ignore-certificate-errors")
 # chrome_options.add_argument("--incognito") # open in icognito window
-# chrome_options.add_argument("--kiosk") # maximize window
-chrome_options.add_argument("--headless") # web browser without GUI
+chrome_options.add_argument("--kiosk") # maximize window
+# chrome_options.add_argument("--headless") # web browser without GUI
 # chrome_options.add_argument("--disable-popup-blocking")
 # chrome_options.add_argument("--disable-infobars") # prevents Chrome from displaying the notification 'Chrome is being controlled by automated software
 # chrome_options.add_experimental_option("prefs", {"profile.block_third_party_cookies": True})
@@ -81,8 +81,11 @@ except:
 
 
 # driver.implicitly_wait(2)
-element = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//img[@alt='Photo for Wayne Rooney']")))
-click_wayne = driver.find_element_by_xpath("//img[@alt='Photo for Wayne Rooney']").click()
+# element = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//img[@alt='Photo for Wayne Rooney']")))
+# click_wayne = driver.find_element_by_xpath("//img[@alt='Photo for Wayne Rooney']").click()
+
+element = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//img[@data-player='p13017']")))
+click_wayne = driver.find_element_by_xpath("//img[@data-player='p13017']").click()
 
 time.sleep(1)
 
